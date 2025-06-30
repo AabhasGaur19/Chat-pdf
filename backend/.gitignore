@@ -1,0 +1,4 @@
+.env
+faiss_indices
+venv/
+__pycache__
