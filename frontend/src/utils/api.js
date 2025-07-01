@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://chat-pdf-aqx6.onrender.com';
+// const API_BASE_URL = 'http://localhost:8000';
 
 export const uploadPDF = async (file) => {
   const formData = new FormData();
