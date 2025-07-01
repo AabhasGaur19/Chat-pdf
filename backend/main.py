@@ -49,7 +49,6 @@
 #         logger.error(f"Error answering question: {str(e)}")
 #         raise HTTPException(status_code=500, detail=f"Error answering question: {str(e)}")
 
-
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -112,12 +111,6 @@ async def root():
 async def health_check():
     return {"status": "healthy"}
 
-# Add this for Render deployment
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=port,
-        log_level="info"
-    )
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
